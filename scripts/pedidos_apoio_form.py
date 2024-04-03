@@ -52,5 +52,11 @@ for column in df.columns:
 
 # Filter NaN values in 'classificacao' field
 df.dropna(subset=['classificacao'], inplace=True)
+# Sort by final result
+df.sort_values(
+               by='nota_final',
+               ascending=False,
+               inplace=True
+               )
 # Save result in data/pedidos_apoio.csv file
 df.to_csv('data/pedidos_apoio.csv', index=False)
